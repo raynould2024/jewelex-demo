@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Hp\\Desktop\\jewelex-demo\\acs-ai-forms\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.acs-ai-forms.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.acs-ai-forms.props",
+      "PackagePath": "build\\acs-ai-forms.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.acs-ai-forms.props",
+      "PackagePath": "buildMultiTargeting\\acs-ai-forms.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.acs-ai-forms.props",
+      "PackagePath": "buildTransitive\\acs-ai-forms.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

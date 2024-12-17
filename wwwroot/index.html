@@ -1,0 +1,455 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teach Your Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        async function uploadFile() {
+            let fileInput = document.getElementById('fileInput');
+            let formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            let responseText = 'processing...';
+            document.getElementById('output').innerText = responseText;
+
+            let response = await fetch('/api/generate_prompt', {
+                method: 'POST',
+                body: formData
+            });
+
+            let result = await response.text();
+            document.getElementById('output').innerText = '';
+            document.getElementById('prompt').value = result;
+            document.getElementById('promptContainer').style.display = 'block';
+        }
+
+        async function callApi() {
+            let phoneNumber = document.getElementById('phoneNumber').value;
+            let promptText = document.getElementById('prompt').value;
+
+            let response = await fetch('/api/call', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ phoneNumber: phoneNumber, prompt: promptText })
+            });
+            
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #cc431d;
+        }
+        h1 {
+            background-color: #525b22;
+            color: #FFF;
+            line-height: 40px;
+            padding: 0 16px;
+            font-weight: bold;
+        }
+        h2 {
+            color: #FFF;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        p {
+            color: #FFF;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            border-bottom: solid 1px #556A8B;
+            padding: 30px 0;
+            max-width: 700px;
+        }
+
+        .step-3 {
+            border: none;
+        }
+
+        .input-group {
+            background-color: #FFF;
+            padding: 4px;
+            border-radius: 6px;
+        }
+
+        input[type=text] {
+            border-radius: 3px;
+            padding: 10px 16px;
+            width: 80%;
+        }
+
+        input[type=file] {
+            border-radius: 3px;
+            padding: 7px 8px;
+            width: 80%;
+        }
+
+        button {
+            background-color: #824AFB;
+            color: #FFF;
+            font-weight: bold;
+            border-radius: 3px;
+            padding: 10px 18px;
+            float: right;
+        }
+
+        button:disabled,
+        button[disabled] {
+            opacity: .5;
+        }
+
+        textarea {
+            border-radius: 6px;
+            width: 100%;
+            padding: 10px 16px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Comportement Call Automation</h1>
+
+    <div class="container mx-auto p-10">
+        <div class="step step-1">
+            <h2>Make it Learn the Document</h2>
+            <p> </p>
+            <div class="input-group">
+                <input type="file" id="fileInput">
+                <button onclick="uploadFile()">Analyze</button>
+            </div>
+            <div id="output"></div>
+        </div>
+
+        <div id="promptContainer" class="step step-2">
+            <h2>The assistant's behavior  you can make chnages inside this</h2>
+            <p>Modify the prompt below to customize how your assistant should respond.</p>
+            <textarea id="prompt" rows="5"></textarea>
+        </div>
+
+        <div class="step step-3">
+            <h2>Make a call </h2>
+            <p>call the number and see how it's working</p>
+            <div class="input-group">
+                <input type="text" id="phoneNumber" placeholder="Enter your phone number">
+                <button onclick="callApi()">Call Me</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teach Your Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        async function uploadFile() {
+            let fileInput = document.getElementById('fileInput');
+            let formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            let responseText = 'Processing...';
+            document.getElementById('output').innerText = responseText;
+
+            let response = await fetch('/api/generate_prompt', {
+                method: 'POST',
+                body: formData
+            });
+
+            let result = await response.text();
+            document.getElementById('output').innerText = '';
+            document.getElementById('prompt').value = result;
+            document.getElementById('promptContainer').style.display = 'block';
+        }
+
+        async function callApi() {
+            let phoneNumber = document.getElementById('phoneNumber').value;
+            let promptText = document.getElementById('prompt').value;
+
+            let response = await fetch('/api/call', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ phoneNumber: phoneNumber, prompt: promptText })
+            });
+            
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #2B456E;
+        }
+        h1 {
+            background-color: #22385B;
+            color: #FFF;
+            line-height: 40px;
+            padding: 0 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .step {
+            border-bottom: solid 1px #556A8B;
+            padding: 30px 0;
+        }
+
+        .step-3 {
+            border: none;
+        }
+
+        .input-group {
+            background-color: #FFF;
+            padding: 4px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        input[type=text], input[type=file] {
+            border-radius: 3px;
+            padding: 10px 16px;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #824AFB;
+            color: #FFF;
+            font-weight: bold;
+            border-radius: 3px;
+            padding: 10px 18px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #6e3be0;
+        }
+
+        button:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        textarea {
+            border-radius: 6px;
+            width: 100%;
+            padding: 10px 16px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+        }
+
+        @media (min-width: 768px) {
+            input[type=text], input[type=file], textarea {
+                width: 80%;
+            }
+
+            button {
+                float: right;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Comportement Call Automation</h1>
+
+    <div class="container mx-auto p-10">
+        <div class="step step-1">
+            <h2 class="text-2xl font-bold text-white">Teach your assistant</h2>
+            <p class="text-white mt-2">Upload a file that your assistant can learn from, like an intake form or an enquiry form. We will give a prompt from the uploaded file. You can then edit in that prompt</p>
+            <div class="input-group">
+                <input type="file" id="fileInput">
+                <button onclick="uploadFile()">Analyze</button>
+            </div>
+            <div id="output" class="text-white mt-4"></div>
+        </div>
+
+        <div id="promptContainer" class="step step-2 hidden">
+            <h2 class="text-2xl font-bold text-white">Define your assistant's behavior</h2>
+            <p class="text-white mt-2">Customize how your assistant should respond by modifying the prompt below.</p>
+            <textarea id="prompt" rows="5"></textarea>
+        </div>
+
+        <div class="step step-3">
+            <h2 class="text-2xl font-bold text-white">Try it out</h2>
+            <p class="text-white mt-2">Enter your phone number and have your assistant call you with the response.</p>
+            <div class="input-group">
+                <input type="text" id="phoneNumber" placeholder="Enter your phone number">
+                <button onclick="callApi()">Call Me</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teach Your Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, rgba(251, 167, 80, 0.3), rgba(255, 255, 255, 1) 200px);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .card h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 2px solid #fba54a;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        textarea,
+        input[type="file"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #fba54a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #fa9f3e;
+        }
+        button:disabled {
+            background-color: #d3d3d3;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="flex items-center justify-center flex-col">
+                <img src="https://haptikappimg.haptikapi.com/uploads/a71727ec70bcebd7ee0aacd59e6ab8eb.png?w=4096&h=1334" alt="Logo" width="150px" height="120px">
+                <h1>Sales Assist - Feature Demo </h1>
+            </div>
+            
+            
+            <!-- Step 1: Upload File -->
+            <div class="form-group">
+                <h2 class="text-xl font-semibold">Teach your assistant</h2>
+                <p>Upload a file that your assistant can learn from, like an intake form or an enquiry form. We will generate a prompt from the uploaded file for you to edit.</p>
+                <input type="file" id="fileInput" class="mt-4">
+                <button onclick="uploadFile()" class="mt-4">Analyze</button>
+                <div id="output" class="text-yellow-500 mt-4"></div>
+            </div>
+
+            <!-- Step 2: Edit Prompt -->
+            <div id="promptContainer" class="form-group hidden">
+                <h2 class="text-xl font-semibold">Define your assistant's behavior</h2>
+                <p>Customize your assistant's response by modifying the prompt below.</p>
+                <textarea id="prompt" rows="5" class="mt-4"></textarea>
+            </div>
+
+            <!-- Step 3: Make a Call -->
+            <div class="form-group">
+                <h2 class="text-xl font-semibold">Try it out</h2>
+                <p>Enter the phone number with country code to receive a call from your assistant with the response. Eg:(+919446434586)</p>
+                <input type="text" id="phoneNumber" placeholder="Enter your phone number" class="mt-4">
+                <button onclick="callApi()" class="mt-4">Call Me</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function uploadFile() {
+            let fileInput = document.getElementById('fileInput');
+            let formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            let responseText = 'Processing...';
+            document.getElementById('output').innerText = responseText;
+
+            let response = await fetch('/api/generate_prompt', {
+                method: 'POST',
+                body: formData
+            });
+
+            let result = await response.text();
+            document.getElementById('output').innerText = '';
+            document.getElementById('prompt').value = result;
+            document.getElementById('promptContainer').classList.remove('hidden');
+        }
+
+        async function callApi() {
+            let phoneNumber = document.getElementById('phoneNumber').value;
+            let promptText = document.getElementById('prompt').value;
+
+            let response = await fetch('/api/call', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ phoneNumber: phoneNumber, prompt: promptText })
+            });
+        }
+    </script>
+
+</body>
+</html>

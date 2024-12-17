@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "GIuMGdBKk2dgGENafzISxWCuFqqEfeus56RiuPFf4nk=",
+  "Source": "acs-ai-forms",
+  "BasePath": "_content/acs-ai-forms",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "acs-ai-forms\\wwwroot",
+      "Source": "acs-ai-forms",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\jewelex-demo\\acs-ai-forms\\wwwroot\\",
+      "BasePath": "_content/acs-ai-forms",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\jewelex-demo\\acs-ai-forms\\wwwroot\\index.html",
+      "SourceId": "acs-ai-forms",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\jewelex-demo\\acs-ai-forms\\wwwroot\\",
+      "BasePath": "_content/acs-ai-forms",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\acs-ai-forms.props" />
+</Project>
