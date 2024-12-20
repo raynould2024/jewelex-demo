@@ -294,7 +294,7 @@ async Task<string> GetChatGPTResponse(List<ChatMessage> messages)
                         //telecommunication 
                         else if(extractedData.is_interview_questions.ToString().ToLower() == "telecomcompanyquestions"){
                         
-                        Console.WriteLine("Telecom insurenance Sales Assitant data dumping API");
+                        Console.WriteLine("Telecom old code insurenance Sales Assitant data dumping API");
                         var dataToSend = new
                         {
                         phoneNumber = phoneNumberData,
